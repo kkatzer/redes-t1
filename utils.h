@@ -14,14 +14,12 @@
 #define GET 12
 #define PUT 13
 #define DESCRITOR 28
-#define EOF 29
+#define FIM 29
 #define ERR 30
 #define NACK 31
 
 #define TAM_MAX_DADOS 63
 #define TAM_MAX_PACOTE 67
-
-const char *device = "eth0";
 
 typedef struct pacote {
 	//Início, tamanho, sequencia, tipo, dados e paridade
@@ -30,6 +28,7 @@ typedef struct pacote {
 } pacote_t;
 
 void cria_pacote(char *dados, char tam, char seq, char tipo, pacote_t *pacote);
-void le_pacote(char *s, pacote_t pacote);
+// void le_pacote(char *s, pacote_t pacote);
+int paridade(char *dados);
 
 #endif

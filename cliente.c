@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "utils.h"
 
 void help() {
   printf("Modo de uso\n\n");
@@ -19,7 +20,8 @@ void help() {
 }
 
 int main(int argc, char **argv) {
-  char str[64];
+  char str[64], *device = "eth0";
+  // int socket = ConexaoRawSocket(device);
 
   system("clear");
   printf("Cliente\n");

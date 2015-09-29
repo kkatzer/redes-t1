@@ -19,7 +19,17 @@
 #define NACK 31
 
 #define TAM_MAX_DADOS 63
+#define TAM_MAX_PACOTE 67
 
 const char *device = "eth0";
+
+typedef struct pacote {
+	//Início, tamanho, sequencia, tipo, dados e paridade
+    char dados[TAM_MAX_PACOTE];
+    char tam;
+} pacote_t;
+
+void cria_pacote(char *dados, char tam, char seq, char tipo, pacote_t *pacote);
+void le_pacote(char *s, pacote_t pacote);
 
 #endif

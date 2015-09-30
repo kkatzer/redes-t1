@@ -22,6 +22,7 @@ void help() {
 int main(int argc, char **argv) {
   char str[64], *device = "eth0";
   // int socket = ConexaoRawSocket(device);
+  int socket = 0;
 
   system("clear");
   printf("Cliente\n");
@@ -58,6 +59,26 @@ int main(int argc, char **argv) {
     }
     else if (!strcmp(comando, "clear")) {
       system(str);
+    }
+    else if (!strcmp(comando, "cdr")) {
+      if (!socket) {
+        printf("Desconectado.\n");
+      }
+    }
+    else if (!strcmp(comando, "lsr")) {
+      if (!socket) {
+        printf("Desconectado.\n");
+      }
+    }
+    else if (!strcmp(comando, "get")) {
+      if (!socket) {
+        printf("Desconectado.\n");
+      }
+    }
+    else if (!strcmp(comando, "put")) {
+      if (!socket) {
+        printf("Desconectado.\n");
+      }
     }
     else if (!strcmp(comando, "exit")) {
       leitura = 0;

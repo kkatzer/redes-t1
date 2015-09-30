@@ -61,9 +61,13 @@ int main(int argc, char **argv) {
       system(str);
     }
     else if (!strcmp(comando, "cdr")) {
-      if (!socket) {
-        printf("Desconectado.\n");
-      }
+      // if (!socket) {
+      //   printf("Desconectado.\n");
+      // }
+      pacote_t pacote;
+      char string[6] = "batata";
+      cria_pacote(string, (char) 6, (char) 1, DESCRITOR, &pacote);
+      le_pacote(string, pacote);
     }
     else if (!strcmp(comando, "lsr")) {
       if (!socket) {
